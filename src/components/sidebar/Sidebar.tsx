@@ -5,6 +5,7 @@ import { useContext } from "react";
 import Link from "next/link";
 
 import { UiContext } from "@/contexts/UiContext";
+import clsx from "clsx";
 
 const links = [
   { name: "accordion", href: "accordion" },
@@ -18,9 +19,10 @@ export const Sidebar = () => {
     <>
       <aside
         id="sidebar"
-        className={`fixed z-20 h-full top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75 ${
-          isSidebarOpen ? "" : "hidden"
-        }`}
+        className={clsx(
+          "fixed z-20 h-full top-0 left-0 pt-16 flex flex-shrink-0 flex-col w-64 max-w-[calc(100vw-48px)] lg:translate-x-0 transition-all duration-300",
+          { "-translate-x-full": !isSidebarOpen }
+        )}
         aria-label="Sidebar"
       >
         <div className="relative flex-1 flex flex-col min-h-0 borderR border-gray-200 bg-white pt-0">
@@ -45,9 +47,12 @@ export const Sidebar = () => {
 
       <div
         id="sidebarBackdrop"
-        className={`bg-gray-900 opacity-50 fixed inset-0 z-10 lg:hidden ${
-          isSidebarOpen ? "" : "hidden"
-        }`}
+        className={clsx(
+          "fixed inset-0 z-10 lg:backdrop-filter-none lg:bg-transparent transition-all duration-500",
+          {
+            "bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm": isSidebarOpen,
+          }
+        )}
         onClick={() => setIsSidebarOpen(false)}
       ></div>
     </>
