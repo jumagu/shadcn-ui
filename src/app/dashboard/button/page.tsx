@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export default function ButtonPage() {
   return (
-    <div className="grid grid-cols-5 gap-3">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
       <Button>Deafult</Button>
       <Button variant="destructive">Desctructive</Button>
       <Button variant="success">Success</Button> {/* Custom */}
