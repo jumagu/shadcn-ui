@@ -4,8 +4,9 @@ import { useContext } from "react";
 
 import Link from "next/link";
 
-import { UiContext } from "@/contexts/UiContext";
 import clsx from "clsx";
+
+import { UiContext } from "@/contexts/UiContext";
 
 const links = [
   { name: "accordion", href: "accordion" },
@@ -48,9 +49,9 @@ export const Sidebar = () => {
       <div
         id="sidebarBackdrop"
         className={clsx(
-          "fixed inset-0 z-10 lg:backdrop-filter-none lg:bg-transparent transition-all duration-500",
+          "fixed inset-0 lg:backdrop-filter-none lg:bg-transparent transition-all duration-500",
           {
-            "bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm": isSidebarOpen,
+            "bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm z-10": isSidebarOpen,
           }
         )}
         onClick={() => setIsSidebarOpen(false)}
