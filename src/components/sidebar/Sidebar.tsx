@@ -58,9 +58,10 @@ export const Sidebar = () => {
       <div
         id="sidebarBackdrop"
         className={clsx(
-          "fixed inset-0 lg:backdrop-filter-none lg:bg-transparent transition-all duration-500",
+          "fixed inset-0 transition-all duration-500 lg:bg-transparent lg:backdrop-filter-none z-0 lg:z-0",
           {
-            "bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm z-10": isSidebarOpen,
+            "bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm z-10":
+              isSidebarOpen,
           }
         )}
         onClick={() => setIsSidebarOpen(false)}
