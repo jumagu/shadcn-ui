@@ -1,5 +1,6 @@
 import { ShadcnIcon } from "../icons";
 import { ToggleSidebarButton } from "./ToggleSidebarButton";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export const Navbar = () => {
   return (
@@ -21,9 +22,10 @@ export const Navbar = () => {
           </div>
           <div className="flex items-center">
             {/* User Avatar */}
-            <div className="bg-blue-500 text-white p-2 rounded-full w-12 h-12 flex items-center justify-center">
-              JG
-            </div>
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarFallback>JG</AvatarFallback>
+            </Avatar>
           </div>
         </div>
       </div>
