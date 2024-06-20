@@ -12,6 +12,15 @@ const links = [
   { name: "accordion", href: "accordion" },
   { name: "alert", href: "alert" },
   { name: "button", href: "button" },
+  { name: "Alert Dialog", href: "alert-dialog" },
+  { name: "Dialog", href: "dialog" },
+  { name: "Badge", href: "badge" },
+  { name: "Calendar", href: "calendar" },
+  { name: "Avatar", href: "avatar" },
+  { name: "Card", href: "card" },
+  { name: "Carousel", href: "carousel" },
+  { name: "Checkbox", href: "checkbox" },
+  { name: "Command", href: "command" },
 ];
 export const Sidebar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useContext(UiContext);
