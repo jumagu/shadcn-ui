@@ -27,6 +27,7 @@ const links = [
   { name: "Input OTP", href: "input-otp" },
   { name: "Progress", href: "progress" },
   { name: "Sheet", href: "sheet" },
+  { name: "Skeleton", href: "skeleton" },
   { name: "Slider", href: "slider" },
   { name: "Sonner", href: "sonner" },
   { name: "Toast", href: "toast" },
