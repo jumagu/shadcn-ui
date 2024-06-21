@@ -3,6 +3,9 @@ import { Inter as FontSans } from "next/font/google";
 
 import "./globals.css";
 
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as SonnerToaster } from "@/components/ui/sonner";
+
 import { cn } from "@/lib/utils";
 import { UiProvider } from "@/providers/UiProvider";
 
@@ -30,6 +33,8 @@ export default function RootLayout({
         )}
       >
         <UiProvider>{children}</UiProvider>
+        <SonnerToaster richColors />
+        <Toaster />
       </body>
     </html>
   );
