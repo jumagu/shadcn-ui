@@ -21,6 +21,16 @@ const links = [
   { name: "Carousel", href: "carousel" },
   { name: "Checkbox", href: "checkbox" },
   { name: "Command", href: "command" },
+  { name: "Combobox", href: "combobox" },
+  { name: "ContextMenu", href: "context-menu" },
+  { name: "Menubar", href: "menubar" },
+  { name: "Input OTP", href: "input-otp" },
+  { name: "Progress", href: "progress" },
+  { name: "Sheet", href: "sheet" },
+  { name: "Slider", href: "slider" },
+  { name: "Sonner", href: "sonner" },
+  { name: "Toast", href: "toast" },
+  { name: "Tabs", href: "tabs" },
 ];
 export const Sidebar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useContext(UiContext);
