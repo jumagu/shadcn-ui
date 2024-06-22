@@ -3,6 +3,7 @@
 import { useContext } from "react";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import clsx from "clsx";
 
@@ -36,6 +37,7 @@ const links = [
   { name: "Form", href: "form" },
 ];
 export const Sidebar = () => {
+  let pathName = usePathname().split("/")[2];
   const { isSidebarOpen, setIsSidebarOpen } = useContext(UiContext);
 
   return (
@@ -48,15 +50,21 @@ export const Sidebar = () => {
         )}
         aria-label="Sidebar"
       >
-        <div className="relative flex-1 flex flex-col min-h-0 borderR border-gray-200 bg-white pt-0">
+        <div className="relative flex-1 flex flex-col min-h-0 bg-white pt-0 dark:bg-[#09090B]">
           <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-            <div className="flex-1 px-3 bg-white divide-y space-y-1">
+            <div className="flex-1 px-3 bg-white divide-y space-y-1 dark:bg-[#09090B]">
               <ul className="space-y-2 pb-2">
                 {links.map((link) => (
                   <li key={link.href} onClick={() => setIsSidebarOpen(false)}>
                     <Link
                       href={link.href}
-                      className="text-base capitalize text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group"
+                      className={clsx(
+                        "text-base capitalize text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group dark:text-white dark:hover:bg-[#1E1E1E]",
+                        {
+                          "bg-gray-100 dark:bg-[#1E1E1E]":
+                            link.href === pathName,
+                        }
+                      )}
                     >
                       <span className="ml-3">{link.name}</span>
                     </Link>
