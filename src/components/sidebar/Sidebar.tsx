@@ -33,6 +33,7 @@ const links = [
   { name: "Toast", href: "toast" },
   { name: "Tabs", href: "tabs" },
   { name: "Data Table", href: "data-table" },
+  { name: "Form", href: "form" },
 ];
 export const Sidebar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useContext(UiContext);
