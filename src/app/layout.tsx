@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 
 import { cn } from "@/lib/utils";
-import { UiProvider } from "@/providers/UiProvider";
+import { UiProvider, ThemeProvider } from "@/providers";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -32,9 +32,17 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <UiProvider>{children}</UiProvider>
-        <SonnerToaster richColors />
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <UiProvider>{children}</UiProvider>
+
+          <SonnerToaster richColors />
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
